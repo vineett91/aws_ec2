@@ -1,7 +1,9 @@
-provider "aws" {
-    access_key = "${var.access_key}"
-    secret_key = "${var.secret_key}"
-    region = "us-east-1"
+#provider.tf
+
+provider "aws"{
+region = "us-east-1"
+access_key = "AKIAVI7OX3YFC35MSP67"
+secret_key = "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"
 }
 
 resource "aws_instance" "ec2_instance" {
@@ -11,15 +13,6 @@ resource "aws_instance" "ec2_instance" {
     instance_type = "${var.instance_type}"
     key_name = "${var.ami_key_pair_name}"
 } 
-
-variable "access_key" {
-        description = "Access key to AWS console"
-		default = "AKIAVI7OX3YFC35MSP67"
-}
-variable "secret_key" {
-        description = "Secret key to AWS console"
-		default = "YkV8m8A54zSDtE6IlyyqzTDXAOZgok09s8dLxNKu"
-}
 
 
 variable "instance_name" {
